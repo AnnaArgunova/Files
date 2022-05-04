@@ -3,6 +3,17 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: auto 200px;
+  grid-template-areas:' files sort';
+
+
+  @media all and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:'sort' 'files';
+  }
+`;
+
+export const Files = styled.div`
+  grid-area: files;
 `;
 
 export const MainWrapper = styled.div`
@@ -15,6 +26,11 @@ export const MainWrapper = styled.div`
 export const Title = styled.div`
   margin-bottom: 10px;
   font-size: 16px;
+
+  @media all and (max-width: 768px) {
+    text-align: center;
+
+  }
 `;
 
 export const Item = styled.div`
@@ -25,7 +41,7 @@ export const Item = styled.div`
 
   width: 100px;
   height: 200px;
-  
+
   margin: 0 10px;
 
 `;

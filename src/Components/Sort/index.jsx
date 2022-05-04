@@ -22,14 +22,14 @@ export default function Sort({files, setSortFiles}) {
     return (
         <>
             {show === sort.name.value && (
-                <div>
+                <S.Wrapper>
                     <S.TitleActive onClick={() => {
                         chooseSort(sort.name)
                     }}>Sort by name
                     </S.TitleActive>
 
                     {showMore && (
-                        <>
+                        <S.WrapperHidden>
                             <S.Title onClick={() => {
                                 chooseSort(sort.size)
                             }}>Sort by size
@@ -38,20 +38,20 @@ export default function Sort({files, setSortFiles}) {
                                 chooseSort(sort.create)
                             }}>Sort by date create
                             </S.Title>
-                        </>
+                        </S.WrapperHidden>
                     )}
-                </div>
+                </S.Wrapper>
             )}
 
             {show === sort.size.value && (
-                <div>
+                <S.Wrapper>
                     <S.TitleActive onClick={() => {
                         chooseSort(sort.size)
                     }}>Sort by size
                     </S.TitleActive>
                     {
                         showMore && (
-                            <>
+                            <S.WrapperHidden>
                                 <S.Title onClick={() => {
                                     chooseSort(sort.name)
                                 }}>Sort by name
@@ -61,21 +61,21 @@ export default function Sort({files, setSortFiles}) {
                                     chooseSort(sort.create)
                                 }}>Sort by date create
                                 </S.Title>
-                            </>
+                            </S.WrapperHidden>
                         )
                     }
-                </div>
+                </S.Wrapper>
             )}
 
             {show === sort.create.value && (
-                <div>
+                <S.Wrapper>
                     <S.TitleActive onClick={() => {
                         chooseSort(sort.create)
                     }}>Sort by date create
                     </S.TitleActive>
 
                     {showMore && (
-                        <>
+                        <S.WrapperHidden>
                             <S.Title onClick={() => {
                                 chooseSort(sort.size)
                             }}>Sort by size
@@ -85,9 +85,9 @@ export default function Sort({files, setSortFiles}) {
                                 chooseSort(sort.name)
                             }}>Sort by name
                             </S.Title>
-                        </>
+                        </S.WrapperHidden>
                     )}
-                </div>
+                </S.Wrapper>
             )}
         </>
     )

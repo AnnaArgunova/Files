@@ -2,7 +2,6 @@ import Sort from "../Sort";
 import * as S from './index.styled';
 import {useCookies} from "react-cookie";
 import {sort} from "../../helpers/configSort";
-import {useState} from "react";
 
 export default function Main({files, setData}) {
     const [cookies] = useCookies(['sort']);
@@ -14,7 +13,7 @@ export default function Main({files, setData}) {
 
     return (
         <S.Wrapper>
-            <div>
+            <S.Files>
                 <S.Title>{files.name}</S.Title>
 
                 <S.MainWrapper>
@@ -27,7 +26,7 @@ export default function Main({files, setData}) {
 
                     ))}
                 </S.MainWrapper>
-            </div>
+            </S.Files>
             <Sort files={sort[sorting].sort(files)} setSortFiles={setData}/>
         </S.Wrapper>
     )
