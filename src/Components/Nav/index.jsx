@@ -1,5 +1,11 @@
-export default function Nav({folder}){
+import * as S from './index.styled';
+import image from '../../image/folder.png'
+
+export default function Nav({active, folder}) {
     return (
-        <div>{folder}</div>
+        <S.Wrapper>
+            <S.Image src={image} title={folder} alt={folder}/>
+            <S.Title active = {active}>{folder}</S.Title>
+        </S.Wrapper>
     )
 }
