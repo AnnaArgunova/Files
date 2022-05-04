@@ -5,7 +5,7 @@ import {sort} from "../../helpers/configSort";
 
 export default function Sort({files, setSortFiles}) {
     const [cookies, setCookie] = useCookies(['sort']);
-    const [show, setShow] = useState(cookies.sort);
+    const [show, setShow] = useState(cookies.sort || 'name');
     const [showMore, setShowMore] = useState(false);
 
     function onChange(newName) {
